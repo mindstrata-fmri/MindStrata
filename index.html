@@ -3,38 +3,75 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
   <title>Anonymous Supplementary Figures and Tables</title>
   <style>
+    :root {
+      --text: #222;
+      --muted: #555;
+      --border: #999;
+      --border-light: #ccc;
+      --bg-head: #f5f5f5;
+    }
+
     body {
-      max-width: 900px;
+      max-width: 1080px;
       margin: 40px auto;
-      padding: 0 16px;
+      padding: 0 16px 48px;
       font-family: Georgia, "Times New Roman", serif;
       line-height: 1.6;
-      color: #222;
+      color: var(--text);
     }
+
     h1, h2 {
       margin-top: 32px;
+      margin-bottom: 12px;
     }
+
+    p {
+      margin: 0 0 14px;
+    }
+
     img {
+      display: block;
       max-width: 100%;
       height: auto;
-      border: 1px solid #ccc;
+      border: 1px solid var(--border-light);
     }
+
+    .caption {
+      color: var(--muted);
+      font-size: 0.96rem;
+      margin: 10px 0 24px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 12px 0 10px;
+    }
+
     table {
       width: 100%;
+      min-width: 720px;
       border-collapse: collapse;
-      margin: 12px 0 8px 0;
-    }
-    th, td {
-      border: 1px solid #999;
-      padding: 8px;
-      text-align: center;
-    }
-    .caption {
-      color: #444;
       font-size: 0.95rem;
-      margin-bottom: 24px;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 8px 10px;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
+    th {
+      background: var(--bg-head);
+      font-weight: 600;
+    }
+
+    td:first-child, th:first-child {
+      text-align: left;
     }
   </style>
 </head>
@@ -45,29 +82,388 @@
   <h2>Figure 1</h2>
   <img src="mindstrata_retrieval_synthetic.png" alt="Figure 1">
   <p class="caption">
-    Caption for Figure 1. Replace this text with your actual caption.
+    Qualitative supplementary visualization corresponding to the attached reconstruction/retrieval result.
   </p>
 
   <h2>Table 1</h2>
-  <table>
-    <tr>
-      <th>Method</th>
-      <th>Metric A</th>
-      <th>Metric B</th>
-    </tr>
-    <tr>
-      <td>Baseline</td>
-      <td>0.81</td>
-      <td>0.76</td>
-    </tr>
-    <tr>
-      <td>Ours</td>
-      <td>0.84</td>
-      <td>0.79</td>
-    </tr>
-  </table>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Methods</th>
+          <th>Setting</th>
+          <th>PixCorr &uarr;</th>
+          <th>SSIM &uarr;</th>
+          <th>AlexNet (2) &uarr;</th>
+          <th>AlexNet (5) &uarr;</th>
+          <th>Inception &uarr;</th>
+          <th>CLIP &uarr;</th>
+          <th>EffNet-B &darr;</th>
+          <th>SwAV &darr;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>MindEye</td>
+          <td>Single-subject</td>
+          <td><strong>0.309</strong></td>
+          <td>0.323</td>
+          <td>94.7%</td>
+          <td>97.8%</td>
+          <td>93.8%</td>
+          <td>94.1%</td>
+          <td>0.645</td>
+          <td>0.367</td>
+        </tr>
+        <tr>
+          <td>MindEye</td>
+          <td>Multi-subject</td>
+          <td>0.129</td>
+          <td>0.255</td>
+          <td>84.2%</td>
+          <td>89.2%</td>
+          <td>84.1%</td>
+          <td>85.0%</td>
+          <td>0.812</td>
+          <td>0.487</td>
+        </tr>
+        <tr>
+          <td>MindStrata</td>
+          <td>Single-subject</td>
+          <td>0.296</td>
+          <td>0.344</td>
+          <td>95.9%</td>
+          <td>98.2%</td>
+          <td>94.8%</td>
+          <td>94.8%</td>
+          <td>0.614</td>
+          <td>0.343</td>
+        </tr>
+        <tr>
+          <td>MindStrata</td>
+          <td>Multi-subject</td>
+          <td>0.298</td>
+          <td><strong>0.344</strong></td>
+          <td><strong>96.0%</strong></td>
+          <td><strong>98.4%</strong></td>
+          <td><strong>95.5%</strong></td>
+          <td><strong>95.4%</strong></td>
+          <td><strong>0.609</strong></td>
+          <td><strong>0.339</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <p class="caption">
-    Caption for Table 1. Replace this text with your actual caption.
+    Quantitative comparison between single-subject and multi-subject settings for MindEye and MindStrata.
+  </p>
+
+  <h2>Table 2</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Methods</th>
+          <th>PixCorr &uarr;</th>
+          <th>SSIM &uarr;</th>
+          <th>AlexNet (2) &uarr;</th>
+          <th>AlexNet (5) &uarr;</th>
+          <th>Inception &uarr;</th>
+          <th>CLIP &uarr;</th>
+          <th>EffNet-B &darr;</th>
+          <th>SwAV &darr;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>MindBridge</td>
+          <td>0.112</td>
+          <td>0.229</td>
+          <td>79.6%</td>
+          <td>89.0%</td>
+          <td>82.3%</td>
+          <td>86.7%</td>
+          <td>0.840</td>
+          <td>0.520</td>
+        </tr>
+        <tr>
+          <td>MindEye2</td>
+          <td><strong>0.235</strong></td>
+          <td><strong>0.428</strong></td>
+          <td>88.02%</td>
+          <td>93.33%</td>
+          <td>83.56%</td>
+          <td>80.75%</td>
+          <td>0.798</td>
+          <td><strong>0.459</strong></td>
+        </tr>
+        <tr>
+          <td>MindAligner</td>
+          <td>0.226</td>
+          <td>0.415</td>
+          <td>88.19%</td>
+          <td>93.26%</td>
+          <td>83.48%</td>
+          <td><strong>81.76%</strong></td>
+          <td>0.800</td>
+          <td><strong>0.459</strong></td>
+        </tr>
+        <tr>
+          <td>MindStrata</td>
+          <td>0.229</td>
+          <td>0.403</td>
+          <td><strong>88.56%</strong></td>
+          <td><strong>93.62%</strong></td>
+          <td><strong>83.71%</strong></td>
+          <td>81.28%</td>
+          <td><strong>0.790</strong></td>
+          <td>0.461</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="caption">
+    Quantitative comparison on the NSD2 setting across MindBridge, MindEye2, MindAligner, and MindStrata.
+  </p>
+
+  <h2>Table 3</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>[N<sub>e<sub>x<sub>s</sub></sub></sub><sup>(g)</sup>, N<sub>e<sub>x<sub>s</sub></sub></sub><sup>(r)</sup>, N<sub>e<sub>x<sub>s</sub></sub></sub><sup>(l)</sup>]</th>
+          <th>Params (M)</th>
+          <th>PixCorr &uarr;</th>
+          <th>SSIM &uarr;</th>
+          <th>Alex(2) &uarr;</th>
+          <th>Alex(5) &uarr;</th>
+          <th>Incep &uarr;</th>
+          <th>CLIP &uarr;</th>
+          <th>EffNet-B &darr;</th>
+          <th>SwAV &darr;</th>
+          <th>Description-level &uarr;</th>
+          <th>Object-level &uarr;</th>
+          <th>Count-level &uarr;</th>
+          <th>Position-level &uarr;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>[1, 1, 1] (Random)</td>
+          <td>620</td>
+          <td>0.002</td>
+          <td>0.163</td>
+          <td>50.1%</td>
+          <td>49.7%</td>
+          <td>49.5%</td>
+          <td>50.0%</td>
+          <td>0.977</td>
+          <td>0.660</td>
+          <td>0.083</td>
+          <td>0.182</td>
+          <td>0.129</td>
+          <td>0.023</td>
+        </tr>
+        <tr>
+          <td>[1, 1, 1]</td>
+          <td>620</td>
+          <td>0.333</td>
+          <td>0.347</td>
+          <td>96.6%</td>
+          <td>98.3%</td>
+          <td>94.6%</td>
+          <td>94.3%</td>
+          <td>0.628</td>
+          <td>0.351</td>
+          <td>0.525</td>
+          <td>0.440</td>
+          <td>0.391</td>
+          <td>0.215</td>
+        </tr>
+        <tr>
+          <td>[4, 4, 4]</td>
+          <td>648</td>
+          <td>0.338</td>
+          <td>0.350</td>
+          <td>97.3%</td>
+          <td>98.6%</td>
+          <td>95.4%</td>
+          <td>94.8%</td>
+          <td>0.615</td>
+          <td>0.343</td>
+          <td>0.538</td>
+          <td>0.462</td>
+          <td>0.410</td>
+          <td>0.224</td>
+        </tr>
+        <tr>
+          <td>[16, 16, 16]</td>
+          <td>762</td>
+          <td>0.341</td>
+          <td>0.353</td>
+          <td>97.6%</td>
+          <td>98.8%</td>
+          <td>95.3%</td>
+          <td>94.9%</td>
+          <td>0.609</td>
+          <td>0.335</td>
+          <td>0.543</td>
+          <td>0.476</td>
+          <td>0.426</td>
+          <td>0.231</td>
+        </tr>
+        <tr>
+          <td>[64, 64, 64]</td>
+          <td>1,214</td>
+          <td>0.342</td>
+          <td>0.353</td>
+          <td>97.8%</td>
+          <td>99.0%</td>
+          <td>96.1%</td>
+          <td>95.8%</td>
+          <td>0.598</td>
+          <td>0.329</td>
+          <td>0.545</td>
+          <td>0.483</td>
+          <td>0.433</td>
+          <td>0.235</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="caption">
+    Ablation on the number of brain-semantic token triplets and its effect on reconstruction and semantic fidelity.
+  </p>
+
+  <h2>Table 4</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Setting</th>
+          <th>Backbone / DM</th>
+          <th>MindStrata</th>
+          <th>Baseline</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Training time</td>
+          <td>ViT-L/14</td>
+          <td>20h</td>
+          <td>19h (MindEye)</td>
+        </tr>
+        <tr>
+          <td>Training time</td>
+          <td>ViT-bigG/14</td>
+          <td>44h</td>
+          <td>75h (MindEye2)</td>
+        </tr>
+        <tr>
+          <td>Inference time</td>
+          <td>VD</td>
+          <td>4.161s</td>
+          <td>2.582s (MindEye)</td>
+        </tr>
+        <tr>
+          <td>Inference time</td>
+          <td>SDXL unCLIP</td>
+          <td>7.492s</td>
+          <td>5.207s (MindEye2)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="caption">
+    Training and inference efficiency comparison between MindStrata and representative baselines.
+  </p>
+
+  <h2>Table 5</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Methods</th>
+          <th>PixCorr &uarr;</th>
+          <th>SSIM &uarr;</th>
+          <th>AlexNet (2) &uarr;</th>
+          <th>AlexNet (5) &uarr;</th>
+          <th>Inception &uarr;</th>
+          <th>CLIP &uarr;</th>
+          <th>EffNet-B &darr;</th>
+          <th>SwAV &darr;</th>
+          <th>Description-level &uarr;</th>
+          <th>Object-level &uarr;</th>
+          <th>Count-level &uarr;</th>
+          <th>Position-level &uarr;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>MindEye</td>
+          <td><strong>0.379</strong></td>
+          <td><strong>0.341</strong></td>
+          <td>96.6%</td>
+          <td>98.1%</td>
+          <td>94.5%</td>
+          <td>94.6%</td>
+          <td>0.638</td>
+          <td>0.363</td>
+          <td>0.529</td>
+          <td>0.437</td>
+          <td>0.410</td>
+          <td>0.181</td>
+        </tr>
+        <tr>
+          <td>MindEye (Stratified)</td>
+          <td>0.373</td>
+          <td>0.336</td>
+          <td><strong>97.4%</strong></td>
+          <td><strong>98.6%</strong></td>
+          <td><strong>95.5%</strong></td>
+          <td><strong>95.2%</strong></td>
+          <td><strong>0.622</strong></td>
+          <td><strong>0.347</strong></td>
+          <td><strong>0.538</strong></td>
+          <td><strong>0.451</strong></td>
+          <td><strong>0.422</strong></td>
+          <td><strong>0.215</strong></td>
+        </tr>
+        <tr>
+          <td>MindBridge</td>
+          <td><strong>0.164</strong></td>
+          <td><strong>0.289</strong></td>
+          <td>88.9%</td>
+          <td>95.7%</td>
+          <td>92.2%</td>
+          <td>94.8%</td>
+          <td>0.711</td>
+          <td>0.415</td>
+          <td>0.481</td>
+          <td>0.376</td>
+          <td>0.358</td>
+          <td>0.138</td>
+        </tr>
+        <tr>
+          <td>MindBridge (Stratified)</td>
+          <td>0.158</td>
+          <td>0.280</td>
+          <td><strong>90.3%</strong></td>
+          <td><strong>96.4%</strong></td>
+          <td><strong>93.7%</strong></td>
+          <td><strong>95.2%</strong></td>
+          <td><strong>0.693</strong></td>
+          <td><strong>0.397</strong></td>
+          <td><strong>0.498</strong></td>
+          <td><strong>0.392</strong></td>
+          <td><strong>0.370</strong></td>
+          <td><strong>0.175</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="caption">
+    Stratified variants of MindEye and MindBridge show consistent gains on fine-grained semantic metrics.
   </p>
 </body>
 </html>
