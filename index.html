@@ -503,5 +503,88 @@
   </div>
   <p class="caption">Performance on layout decoding. Random baseline utilizes random values to establish a lower bound for performance. Nsdgeneral encompasses the entire general visual cortex as a reference.</p>
 
+  <h2>Table 7</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th>ViT</th>
+          <th>Multi&#8209;subject</th>
+          <th>fMRI&#8209;to&#8209;image</th>
+          <th>Image&#8209;to&#8209;fMRI</th>
+          <th>fMRI&#8209;to&#8209;text</th>
+          <th>Text&#8209;to&#8209;fMRI</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>MindEye</td>
+          <td>ViT&#8209;L/14</td>
+          <td>No</td>
+          <td>97.01%</td>
+          <td>94.77%</td>
+          <td>5.12%</td>
+          <td>4.43%</td>
+        </tr>
+        <tr>
+          <td>Ours</td>
+          <td>ViT&#8209;L/14</td>
+          <td>No</td>
+          <td>96.88%</td>
+          <td>95.36%</td>
+          <td><strong>37.26%</strong></td>
+          <td><strong>32.81%</strong></td>
+        </tr>
+        <tr>
+          <td>Ours</td>
+          <td>ViT&#8209;L/14</td>
+          <td>Yes</td>
+          <td>97.94%</td>
+          <td>96.17%</td>
+          <td>36.94%</td>
+          <td>31.69%</td>
+        </tr>
+        <tr>
+          <td>MindEye2</td>
+          <td>ViT&#8209;bigG/14</td>
+          <td>No</td>
+          <td>99.93%</td>
+          <td>99.71%</td>
+          <td>4.62%</td>
+          <td>3.89%</td>
+        </tr>
+        <tr>
+          <td>MindEye2</td>
+          <td>ViT&#8209;bigG/14</td>
+          <td>Yes</td>
+          <td>99.56%</td>
+          <td>99.42%</td>
+          <td>4.38%</td>
+          <td>3.61%</td>
+        </tr>
+        <tr>
+          <td>Ours</td>
+          <td>ViT&#8209;bigG/14</td>
+          <td>No</td>
+          <td>99.87%</td>
+          <td>99.68%</td>
+          <td>30.48%</td>
+          <td>28.23%</td>
+        </tr>
+        <tr>
+          <td>Ours</td>
+          <td>ViT&#8209;bigG/14</td>
+          <td>Yes</td>
+          <td><strong>99.99%</strong></td>
+          <td><strong>99.97%</strong></td>
+          <td>30.93%</td>
+          <td>27.74%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="caption">Quantitative evaluation of retrieval performance</p>
+
 </body>
 </html>
