@@ -80,6 +80,19 @@
 
   <h2>Figure 1</h2>
   <img src="mindstrata_retrieval_synthetic.png" alt="Figure 1">
+  <p class="caption">Qualitative supplementary visualization corresponding to the attached reconstruction/retrieval result.</p>
+
+  <h2>Figure 2</h2>
+  <img src="mindstrata_stratified_semantic_decoding.png" alt="Figure 2">
+  <p class="caption">Qualitative visualization on stratified semantic decoding.</p>
+
+  <h2>Figure 3</h2>
+  <img src="mindstrata_layout_decoding.png" alt="Figure 3">
+  <p class="caption">Qualitative visualization on layout decoding.</p>
+
+  <h2>Figure 4</h2>
+  <img src="mindstrata_neural_interpretability.png" alt="Figure 4">
+  <p class="caption">Qualitative visualization on neural interpretability via voxel-wise analysis.</p>
 
   <h2>Table 1</h2>
   <div class="table-wrap">
@@ -150,6 +163,7 @@
       </tbody>
     </table>
   </div>
+  <p class="caption">Quantitative comparison between single-subject and multi-subject settings for MindEye and MindStrata.</p>
 
   <h2>Table 2</h2>
   <div class="table-wrap">
@@ -215,6 +229,7 @@
       </tbody>
     </table>
   </div>
+  <p class="caption">Quantitative comparison on the new subject adaptation setting across MindBridge, MindEye2, MindAligner, and MindStrata.</p>
 
   <h2>Table 3</h2>
   <div class="table-wrap">
@@ -321,6 +336,7 @@
       </tbody>
     </table>
   </div>
+  <p class="caption">Ablation on the number of brain-semantic token triplets and its effect on reconstruction and semantic fidelity. Random denotes a lower-bound baseline where the real fMRI input is replaced with randomly sampled Gaussian noise.</p>
 
   <h2>Table 4</h2>
   <div class="table-wrap">
@@ -361,6 +377,7 @@
       </tbody>
     </table>
   </div>
+  <p class="caption">Training and inference efficiency comparison between MindStrata and representative baselines.</p>
 
   <h2>Table 5</h2>
   <div class="table-wrap">
@@ -446,6 +463,45 @@
       </tbody>
     </table>
   </div>
+  <p class="caption">Stratified variants of MindEye and MindBridge show consistent gains on all semantic metrics.</p>
+
+  <h2>Table 6</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Configuration</th>
+          <th>Target Region mIoU &uarr;</th>
+          <th>Target Region N-CD &darr;</th>
+          <th>Target Region N-ASD &darr;</th>
+          <th>Surrounding Region mIoU &uarr;</th>
+          <th>Surrounding Region N-CD &darr;</th>
+          <th>Surrounding Region N-ASD &darr;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Random</td>
+          <td>6.98%</td>
+          <td>16.20%</td>
+          <td>13.43%</td>
+          <td>44.09%</td>
+          <td>11.50%</td>
+          <td>8.88%</td>
+        </tr>
+        <tr>
+          <td>Nsdgeneral</td>
+          <td><strong>38.20%</strong></td>
+          <td><strong>10.80%</strong></td>
+          <td><strong>6.59%</strong></td>
+          <td><strong>56.58%</strong></td>
+          <td><strong>8.46%</strong></td>
+          <td><strong>6.23%</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="caption">Performance on layout decoding. Random baseline utilizes random values to establish a lower bound for performance. Nsdgeneral encompasses the entire general visual cortex as a reference.</p>
 
 </body>
 </html>
